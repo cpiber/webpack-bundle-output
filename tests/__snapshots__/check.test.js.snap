@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`async 1`] = `
+Object {
+  "tests/__fixtures__/async/index.js": Array [
+    "tests/out/286f6fb3dc3ced1e673abae0c126d4e5/main.js",
+  ],
+  "tests/__fixtures__/basic/index.js": Array [
+    "tests/out/286f6fb3dc3ced1e673abae0c126d4e5/tests___fixtures___basic_index_js.js",
+  ],
+}
+`;
+
+exports[`async loader 1`] = `
+Object {
+  "tests/__fixtures__/basic/index.js": Array [
+    "tests/out/280472d98237195f18f18178cc98a421/node_modules_pnpm_raw-loader_4_0_2_webpack_5_51_1_node_modules_raw-loader_dist_cjs_js_tests__-7ac1ed.js",
+  ],
+  "tests/__fixtures__/loader-async/index.js": Array [
+    "tests/out/280472d98237195f18f18178cc98a421/main.js",
+  ],
+}
+`;
+
+exports[`includes 1`] = `
+Object {
+  "tests/__fixtures__/includes/index.js": Array [
+    "tests/out/8335e415b73eede658a410f36cb51dc7/main.js",
+  ],
+  "tests/__fixtures__/includes/other.js": Array [
+    "tests/out/8335e415b73eede658a410f36cb51dc7/main.js",
+  ],
+}
+`;
+
+exports[`lib 1`] = `
+Object {
+  "node_modules/.pnpm/jquery@3.6.0/node_modules/jquery/dist/jquery.js": Array [
+    "tests/out/9bc23bf689353c88d9a7d4b50ffd524b/main.js",
+  ],
+  "tests/__fixtures__/lib/index.js": Array [
+    "tests/out/9bc23bf689353c88d9a7d4b50ffd524b/main.js",
+  ],
+}
+`;
+
+exports[`loader 1`] = `
+Object {
+  "tests/__fixtures__/basic/index.js": Array [
+    "tests/out/f8d121b54254ebd9c118e62f6977f90f/main.js",
+  ],
+  "tests/__fixtures__/loader/index.js": Array [
+    "tests/out/f8d121b54254ebd9c118e62f6977f90f/main.js",
+  ],
+}
+`;
+
+exports[`multiple entries basic 1`] = `
+Object {
+  "tests/__fixtures__/basic/index.js": Array [
+    "tests/out/57cb4cd26de2fdbd75dc17ff32270bfe/basic.js",
+  ],
+  "tests/__fixtures__/includes/index.js": Array [
+    "tests/out/57cb4cd26de2fdbd75dc17ff32270bfe/includes.js",
+  ],
+  "tests/__fixtures__/includes/other.js": Array [
+    "tests/out/57cb4cd26de2fdbd75dc17ff32270bfe/includes.js",
+  ],
+}
+`;
+
+exports[`multiple entries cross-files 1`] = `
+Object {
+  "tests/__fixtures__/basic/index.js": Array [
+    "tests/out/e03943f5c87c4e9fab71c730eb5a9f44/basic.js",
+    "tests/out/e03943f5c87c4e9fab71c730eb5a9f44/cross.js",
+  ],
+  "tests/__fixtures__/cross/index.js": Array [
+    "tests/out/e03943f5c87c4e9fab71c730eb5a9f44/cross.js",
+  ],
+  "tests/__fixtures__/includes/index.js": Array [
+    "tests/out/e03943f5c87c4e9fab71c730eb5a9f44/includes.js",
+    "tests/out/e03943f5c87c4e9fab71c730eb5a9f44/cross.js",
+  ],
+  "tests/__fixtures__/includes/other.js": Array [
+    "tests/out/e03943f5c87c4e9fab71c730eb5a9f44/includes.js",
+    "tests/out/e03943f5c87c4e9fab71c730eb5a9f44/cross.js",
+  ],
+}
+`;
+
+exports[`single file 1`] = `
+Object {
+  "tests/__fixtures__/basic/index.js": Array [
+    "tests/out/0fab2d22723fb072662234118cc98c52/main.js",
+  ],
+}
+`;
+
+exports[`ts 1`] = `
+Object {
+  "tests/__fixtures__/ts/index.ts": Array [
+    "tests/out/c0620d9f59acb6cf19d5bf8c7b72a4ce/main.js",
+  ],
+}
+`;
+
+exports[`ts loader 1`] = `
+Object {
+  "tests/__fixtures__/loader-ts/index.js": Array [
+    "tests/out/f218dae2e9bf809ce76b518ffa5b6109/main.js",
+  ],
+  "tests/__fixtures__/ts/index.ts": Array [
+    "tests/out/f218dae2e9bf809ce76b518ffa5b6109/main.js",
+  ],
+  "tests/__fixtures__/ts/tsconfig.json": Array [
+    "tests/out/f218dae2e9bf809ce76b518ffa5b6109/main.js",
+  ],
+}
+`;

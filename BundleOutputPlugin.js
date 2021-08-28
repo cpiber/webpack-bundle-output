@@ -16,6 +16,13 @@ const schema = {
 };
 
 class BundleOutputPlugin {
+  /**
+   * @type {{[key:string]: Set<string>}}
+   */
+  files = {};
+  outpath = '';
+  NormalModule = null;
+
   constructor(options = {}) {
     validate(schema, options, {
       name: BundleOutputPlugin.name,
@@ -32,34 +39,46 @@ class BundleOutputPlugin {
     const { webpack } = compiler;
     const { Compilation, NormalModule } = webpack;
     const { RawSource } = webpack.sources;
+    this.NormalModule = NormalModule;
 
     compiler.hooks.thisCompilation.tap(pluginName, compilation => {
-      /**
-       * @type {{[key:string]: Set<string>}}
-       */
-      const files = {};
+      this.files = {};
+      this.outpath = compilation.outputOptions.path;
 
       compilation.hooks.processAssets.tap({
         name: pluginName,
         stage: Compilation.PROCESS_ASSETS_STAGE_SUMMARIZE,
       }, () => {
+        compilation.chunks.forEach(chunk =>
+          compilation.chunkGraph.getChunkModules(chunk).forEach(module => this.handleModule(chunk, module)));
 
-        compilation.chunks.forEach(chunk => {
-          for (const module of compilation.chunkGraph.getChunkModules(chunk)) {
-            if (!(module instanceof NormalModule)) return;
-            const file = relative(this.options.cwd, module.resource);
-            const set = files[file] = files[file] || new Set();
-            chunk.files.forEach(f => set.add(relative(this.options.cwd, join(compilation.outputOptions.path, f))));
-          }
-        });
-
-        for (const f in files) {
-          files[f] = [...files[f].values()];
-        }
-
-        compilation.emitAsset(this.options.output, new RawSource(JSON.stringify(files)));
+        for (const f in this.files)
+          this.files[f] = [...this.files[f].values()];
+        
+        compilation.emitAsset(this.options.output, new RawSource(JSON.stringify(this.files)));
       });
     });
+  }
+
+  /**
+   * @param {import('webpack').Chunk} chunk
+   * @param {import('webpack').Module} module
+   */
+  handleModule(chunk, module) {
+    if (module instanceof this.NormalModule)
+      this.addResource(chunk, module.resource);
+    else if (module.rootModule)
+      this.handleModule(chunk, module.rootModule);
+  }
+
+  /**
+   * @param {import('webpack').Chunk} chunk
+   * @param {string} resource
+   */
+  addResource(chunk, resource) {
+    const file = relative(this.options.cwd, resource);
+    const set = this.files[file] = this.files[file] || new Set();
+    chunk.files.forEach(f => set.add(relative(this.options.cwd, join(this.outpath, f))));
   }
 }
 module.exports = BundleOutputPlugin;

@@ -1,6 +1,6 @@
 {
   "name": "webpack-bundle-output",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Webpack Plugin for creating map from source file to chunk",
   "main": "BundleOutputPlugin.js",
   "files": [

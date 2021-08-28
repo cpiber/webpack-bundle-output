@@ -4,10 +4,9 @@
   "description": "Webpack Plugin for creating map from source file to chunk",
   "main": "BundleOutputPlugin.js",
   "scripts": {
-    "test": "rimraf tests/out && jest",
-    "build": "webpack"
+    "test": "rimraf tests/out && jest"
   },
-  "author": "",
+  "author": "cp.piber",
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^27.0.1",
@@ -20,5 +19,14 @@
     "typescript": "^4.4.2",
     "webpack": "^5.51.1",
     "webpack-cli": "^4.8.0"
+  },
+  "homepage": "https://github.com/cpiber/webpack-bundle-output#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cpiber/webpack-bundle-output.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cpiber/webpack-bundle-output/issues",
+    "email": "cp.piber@gmail.com"
   }
 }

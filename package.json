@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Webpack Plugin for creating map from source file to chunk",
   "main": "BundleOutputPlugin.js",
+  "files": ["./BundleOutputPlugin.js"],
   "scripts": {
     "test": "rimraf tests/out && jest"
   },

@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`watch correctly adds and removes sources 1`] = `
+Object {
+  "tests/__fixtures__/watch/index.js": Array [
+    "tests/out/ac890192fa240e241e4ba25b83319333/main.js",
+  ],
+}
+`;
+
+exports[`watch correctly adds and removes sources 2`] = `
+Object {
+  "tests/__fixtures__/watch/index.js": Array [
+    "tests/out/ac890192fa240e241e4ba25b83319333/main.js",
+  ],
+  "tests/__fixtures__/watch/pass1.js": Array [
+    "tests/out/ac890192fa240e241e4ba25b83319333/main.js",
+  ],
+}
+`;
+
+exports[`watch correctly adds and removes sources 3`] = `
+Object {
+  "tests/__fixtures__/watch/index.js": Array [
+    "tests/out/ac890192fa240e241e4ba25b83319333/main.js",
+  ],
+}
+`;

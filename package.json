@@ -7,7 +7,8 @@
     "./BundleOutputPlugin.js"
   ],
   "scripts": {
-    "test": "rimraf tests/out && jest"
+    "test": "npm run clean && jest",
+    "clean": "rimraf tests/out tests/__fixtures__/watch/index.js"
   },
   "author": "cp.piber",
   "license": "ISC",

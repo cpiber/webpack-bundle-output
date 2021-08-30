@@ -10,9 +10,11 @@ const { createHash } = require('crypto');
  * @param {Record<string, any>} pluginOpt
  */
 module.exports.toMap = (options, pluginOpt = {}) => {
-  const hash = createHash('md5');
-  hash.update(JSON.stringify(options));
-  const out = join(__dirname, 'out', hash.digest('hex'));
+  const hash = createHash('md5')
+    .update(JSON.stringify(options))
+    .update(JSON.stringify(pluginOpt))
+    .digest('hex');
+  const out = join(__dirname, 'out', hash);
   return { out, map: join(out, typeof pluginOpt.output === 'string' ? pluginOpt.output : 'map.json') };
 };
 

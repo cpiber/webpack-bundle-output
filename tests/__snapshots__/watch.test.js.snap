@@ -3,7 +3,7 @@
 exports[`watch correctly adds and removes sources 1`] = `
 Object {
   "tests/__fixtures__/watch/index.js": Array [
-    "tests/out/ac890192fa240e241e4ba25b83319333/main.js",
+    "tests/out/696bfac4bfa16c7ff712dfff92fb80f2/main.js",
   ],
 }
 `;
@@ -11,10 +11,10 @@ Object {
 exports[`watch correctly adds and removes sources 2`] = `
 Object {
   "tests/__fixtures__/watch/index.js": Array [
-    "tests/out/ac890192fa240e241e4ba25b83319333/main.js",
+    "tests/out/696bfac4bfa16c7ff712dfff92fb80f2/main.js",
   ],
   "tests/__fixtures__/watch/pass1.js": Array [
-    "tests/out/ac890192fa240e241e4ba25b83319333/main.js",
+    "tests/out/696bfac4bfa16c7ff712dfff92fb80f2/main.js",
   ],
 }
 `;
@@ -22,7 +22,7 @@ Object {
 exports[`watch correctly adds and removes sources 3`] = `
 Object {
   "tests/__fixtures__/watch/index.js": Array [
-    "tests/out/ac890192fa240e241e4ba25b83319333/main.js",
+    "tests/out/696bfac4bfa16c7ff712dfff92fb80f2/main.js",
   ],
 }
 `;

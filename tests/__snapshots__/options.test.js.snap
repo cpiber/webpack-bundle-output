@@ -3,7 +3,7 @@
 exports[`obeys cwd 1`] = `
 Object {
   "basic/index.js": Array [
-    "../out/0fab2d22723fb072662234118cc98c52/main.js",
+    "../out/ba0947c7e0390c1eecfc1feed0248ac9/main.js",
   ],
 }
 `;

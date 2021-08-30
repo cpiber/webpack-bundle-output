@@ -26,6 +26,9 @@ module.exports = {
 }
 ```
 
+Note that webpack strips needed information in production mode, so the maps you actually want to use should be produced in development mode.
+
+
 ## Options
 
 The plugin supports two options (`new BundleOutputPlugin({ ... })`):

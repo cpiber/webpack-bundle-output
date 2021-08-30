@@ -15,6 +15,13 @@ test('includes', async () => {
   expect(file(map)).toMatchSnapshot();
 });
 
+test('import', async () => {
+  const { map } = await webpack({
+    entry: getFixturePathSync(__dirname, 'import'),
+  });
+  expect(file(map)).toMatchSnapshot();
+});
+
 test('multiple entries basic', async () => {
   const { map } = await webpack({
     entry: {

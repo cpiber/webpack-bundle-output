@@ -22,6 +22,17 @@ Object {
 }
 `;
 
+exports[`import 1`] = `
+Object {
+  "tests/__fixtures__/import/index.js": Array [
+    "tests/out/95648dadad51baf0ce1519920df6f3c5/main.js",
+  ],
+  "tests/__fixtures__/import/other.js": Array [
+    "tests/out/95648dadad51baf0ce1519920df6f3c5/main.js",
+  ],
+}
+`;
+
 exports[`includes 1`] = `
 Object {
   "tests/__fixtures__/includes/index.js": Array [

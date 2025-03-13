@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`async 1`] = `
+{
+  "tests/__fixtures__/async/index.js": [
+    "tests/out/163e07100a5673233b03d4915a9f7dca/main.a721da2150231d43426e.js",
+  ],
+  "tests/__fixtures__/basic/index.js": [
+    "tests/out/163e07100a5673233b03d4915a9f7dca/455.d47f03f76636dafab7d2.js",
+  ],
+}
+`;
+
+exports[`async loader 1`] = `
+{
+  "tests/__fixtures__/basic/index.js": [
+    "tests/out/f0fbefcfc1d91175d32f710818f7fab5/417.2b3ff2e09d0850ae8e6a.js",
+  ],
+  "tests/__fixtures__/loader-async/index.js": [
+    "tests/out/f0fbefcfc1d91175d32f710818f7fab5/main.1f496be4ed039b9a11d9.js",
+  ],
+}
+`;
+
+exports[`import 1`] = `
+{
+  "tests/__fixtures__/import/index.js": [
+    "tests/out/08befd7fb2b515b412e5710fc0b12f9f/main.94a6f8acee96f8f20548.js",
+  ],
+  "tests/__fixtures__/import/other.js": [
+    "tests/out/08befd7fb2b515b412e5710fc0b12f9f/main.94a6f8acee96f8f20548.js",
+  ],
+}
+`;
+
+exports[`includes 1`] = `
+{
+  "tests/__fixtures__/includes/index.js": [
+    "tests/out/72ab484f806bf2eb9e800a8886b5d5e3/main.297f413a207d3bbccd86.js",
+  ],
+  "tests/__fixtures__/includes/other.js": [
+    "tests/out/72ab484f806bf2eb9e800a8886b5d5e3/main.297f413a207d3bbccd86.js",
+  ],
+}
+`;
+
+exports[`lib 1`] = `
+{
+  "node_modules/.pnpm/jquery@3.7.1/node_modules/jquery/dist/jquery.js": [
+    "tests/out/3eb73782e86910ff178d2f36deeb5507/main.24066213ff3fab3a67ad.js",
+  ],
+  "tests/__fixtures__/lib/index.js": [
+    "tests/out/3eb73782e86910ff178d2f36deeb5507/main.24066213ff3fab3a67ad.js",
+  ],
+}
+`;
+
+exports[`loader 1`] = `
+{
+  "tests/__fixtures__/basic/index.js": [
+    "tests/out/e46d5ee3554ef2a9d5b657e3e2a69d72/main.505f7615674967701bde.js",
+  ],
+  "tests/__fixtures__/loader/index.js": [
+    "tests/out/e46d5ee3554ef2a9d5b657e3e2a69d72/main.505f7615674967701bde.js",
+  ],
+}
+`;
+
+exports[`multiple entries basic 1`] = `
+{
+  "tests/__fixtures__/basic/index.js": [
+    "tests/out/4d2c55308cf7f1960159605f5d25abfe/basic.95d7ec88cd17451c877b.js",
+  ],
+  "tests/__fixtures__/includes/index.js": [
+    "tests/out/4d2c55308cf7f1960159605f5d25abfe/includes.6b36bc64abb20e48e0d4.js",
+  ],
+  "tests/__fixtures__/includes/other.js": [
+    "tests/out/4d2c55308cf7f1960159605f5d25abfe/includes.6b36bc64abb20e48e0d4.js",
+  ],
+}
+`;
+
+exports[`multiple entries cross-files 1`] = `
+{
+  "tests/__fixtures__/basic/index.js": [
+    "tests/out/f85bd5cd6e3ac3e925e9c4287d8e5d24/basic.95d7ec88cd17451c877b.js",
+    "tests/out/f85bd5cd6e3ac3e925e9c4287d8e5d24/cross.3f06fd34ec7352081c14.js",
+  ],
+  "tests/__fixtures__/cross/index.js": [
+    "tests/out/f85bd5cd6e3ac3e925e9c4287d8e5d24/cross.3f06fd34ec7352081c14.js",
+  ],
+  "tests/__fixtures__/includes/index.js": [
+    "tests/out/f85bd5cd6e3ac3e925e9c4287d8e5d24/includes.6b36bc64abb20e48e0d4.js",
+    "tests/out/f85bd5cd6e3ac3e925e9c4287d8e5d24/cross.3f06fd34ec7352081c14.js",
+  ],
+  "tests/__fixtures__/includes/other.js": [
+    "tests/out/f85bd5cd6e3ac3e925e9c4287d8e5d24/includes.6b36bc64abb20e48e0d4.js",
+    "tests/out/f85bd5cd6e3ac3e925e9c4287d8e5d24/cross.3f06fd34ec7352081c14.js",
+  ],
+}
+`;
+
+exports[`single file 1`] = `
+{
+  "tests/__fixtures__/basic/index.js": [
+    "tests/out/51a68ac6e5408c949917623e59383154/main.f3b2be1daa15455f15bc.js",
+  ],
+}
+`;
+
+exports[`ts 1`] = `
+{
+  "tests/__fixtures__/ts/index.ts": [
+    "tests/out/4cc70a8c707eb6b8fb4c0ad615ddefbb/main.8e38fbf478515e90b24e.js",
+  ],
+}
+`;
+
+exports[`ts loader 1`] = `
+{
+  "tests/__fixtures__/loader-ts/index.js": [
+    "tests/out/9ec3f6e8b68deb600cb35ed79c069599/main.5a1af72568eac61776fe.js",
+  ],
+  "tests/__fixtures__/ts/index.ts": [
+    "tests/out/9ec3f6e8b68deb600cb35ed79c069599/main.5a1af72568eac61776fe.js",
+  ],
+  "tests/__fixtures__/ts/tsconfig.json": [
+    "tests/out/9ec3f6e8b68deb600cb35ed79c069599/main.5a1af72568eac61776fe.js",
+  ],
+}
+`;

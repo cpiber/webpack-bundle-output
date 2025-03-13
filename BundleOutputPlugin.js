@@ -1,79 +1,93 @@
 const { relative, join } = require('path');
 const { validate } = require('schema-utils');
-const { cwd } = process;
+const { cwd } = require('process');
 
-// schema for options object
 const schema = {
-  type: 'object',
-  properties: {
-    cwd: {
-      type: 'string',
+    type: 'object',
+    properties: {
+        cwd: { type: 'string' },
+        output: { type: 'string' },
     },
-    output: {
-      type: 'string',
-    },
-  },
+    additionalProperties: false,
 };
 
-class BundleOutputPlugin {
-  constructor(options = {}) {
-    validate(schema, options, {
-      name: BundleOutputPlugin.name,
-      baseDataPath: "options",
-    });
-    this.options = { cwd: cwd(), output: 'map.json', ...options };
-  }
+class BundleOutputPlugin
+{
+    constructor(options = {})
+    {
+        validate(schema, options, {
+            name: BundleOutputPlugin.name,
+            baseDataPath: 'options',
+        });
 
-  /**
-   * @param {import('webpack').Compiler} compiler 
-   */
-  apply(compiler) {
-    const pluginName = BundleOutputPlugin.name;
-    const { webpack } = compiler;
-    const { Compilation, NormalModule } = webpack;
-    const { RawSource } = webpack.sources;
+        this.options = {
+            cwd: cwd(),
+            output: 'map.json', // Default output file
+            ...options,
+        };
+    }
+    /**
+     * @param {import('webpack').Compiler} compiler 
+     */
+    apply(compiler)
+    {
+        const pluginName = BundleOutputPlugin.name;
+        const { webpack } = compiler;
+        const { Compilation, NormalModule } = webpack;
+        const { RawSource } = webpack.sources;
 
-    compiler.hooks.thisCompilation.tap(pluginName, compilation => {
-      /**
-       * @type {{[key:string]: Set<string>}}
-       */
-      const files = {};
-      const outpath = compilation.outputOptions.path;
+        compiler.hooks.thisCompilation.tap(pluginName, (compilation) =>
+        {
+            let filesMap = {}; // Store source-to-output mapping
+            const outputPath = compilation.outputOptions.path;
 
-      /**
-       * @param {import('webpack').Chunk} chunk
-       * @param {import('webpack').Module} module
-       */
-      const handleModule = (chunk, module) => {
-        if (module instanceof NormalModule)
-          addResource(chunk, module.resource);
-        else if (module.rootModule)
-          handleModule(chunk, module.rootModule);
-      }
+            /**
+             * Adds a mapping from source file to output file.
+             */
+            const addMapping = (sourcePath, outputFile) =>
+            {
+                if (!sourcePath) return;
+                const relativeSource = relative(this.options.cwd, sourcePath);
+                filesMap[relativeSource] = filesMap[relativeSource] || new Set();
+                filesMap[relativeSource].add(relative(this.options.cwd, join(outputPath, outputFile)));
+            };
 
-      /**
-       * @param {import('webpack').Chunk} chunk
-       * @param {string} resource
-       */
-      const addResource = (chunk, resource) => {
-        const file = relative(this.options.cwd, resource);
-        const set = files[file] = files[file] || new Set();
-        chunk.files.forEach(f => set.add(relative(this.options.cwd, join(outpath, f))));
-      }
+            /**
+             * Recursively processes modules in a chunk.
+             */
+            const processModule = (chunk, module) =>
+            {
+                if (module instanceof NormalModule && module.resource) {
+                    chunk.files.forEach((outputFile) => addMapping(module.resource, outputFile));
+                }
 
-      compilation.hooks.processAssets.tap({
-        name: pluginName,
-        stage: Compilation.PROCESS_ASSETS_STAGE_SUMMARIZE,
-      }, () => {
-        compilation.chunks.forEach(chunk =>
-          compilation.chunkGraph.getChunkModules(chunk).forEach(module => handleModule(chunk, module)));
+                // Ensure dependencies of entry points are also mapped
+                if (module.modules) {
+                    module.modules.forEach((subModule) => processModule(chunk, subModule));
+                }
+            };
 
-        for (const f in files)
-          files[f] = [...files[f].values()];
-        
-        compilation.emitAsset(this.options.output, new RawSource(JSON.stringify(files)));
-      });
-    });
-  }
+            compilation.hooks.processAssets.tap(
+                {
+                    name: pluginName,
+                    stage: Compilation.PROCESS_ASSETS_STAGE_SUMMARIZE,
+                },
+                () => {
+                    compilation.chunks.forEach((chunk) =>
+                    {
+                        compilation.chunkGraph.getChunkModules(chunk).forEach((module) => processModule(chunk, module));
+                    });
+
+                    // Convert Set to array for JSON output
+                    const finalMap = Object.fromEntries(
+                        Object.entries(filesMap).map(([key, value]) => [key, [...value]])
+                    );
+
+                    compilation.emitAsset(this.options.output, new RawSource(JSON.stringify(finalMap, null, 2)));
+                }
+            );
+        });
+    }
 }
+
 module.exports = BundleOutputPlugin;

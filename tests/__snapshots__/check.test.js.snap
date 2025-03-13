@@ -1,131 +1,131 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`async 1`] = `
-Object {
-  "tests/__fixtures__/async/index.js": Array [
-    "tests/out/bba1297622ef55ef6264a40904be1781/main.js",
+{
+  "tests/__fixtures__/async/index.js": [
+    "tests/out/5b71205016f3f4d021c84fcaa0c3882f/main.js",
   ],
-  "tests/__fixtures__/basic/index.js": Array [
-    "tests/out/bba1297622ef55ef6264a40904be1781/tests___fixtures___basic_index_js.js",
+  "tests/__fixtures__/basic/index.js": [
+    "tests/out/5b71205016f3f4d021c84fcaa0c3882f/tests___fixtures___basic_index_js.js",
   ],
 }
 `;
 
 exports[`async loader 1`] = `
-Object {
-  "tests/__fixtures__/basic/index.js": Array [
-    "tests/out/9358196dd77cd96fd85b41b95cc0e1fd/node_modules_pnpm_raw-loader_4_0_2_webpack_5_51_1_node_modules_raw-loader_dist_cjs_js_tests__-7ac1ed.js",
+{
+  "tests/__fixtures__/basic/index.js": [
+    "tests/out/124742d27df8c35bd28c3f5685f945ba/node_modules_pnpm_raw-loader_4_0_2_webpack_5_98_0_node_modules_raw-loader_dist_cjs_js_tests__-3d3f28.js",
   ],
-  "tests/__fixtures__/loader-async/index.js": Array [
-    "tests/out/9358196dd77cd96fd85b41b95cc0e1fd/main.js",
+  "tests/__fixtures__/loader-async/index.js": [
+    "tests/out/124742d27df8c35bd28c3f5685f945ba/main.js",
   ],
 }
 `;
 
 exports[`import 1`] = `
-Object {
-  "tests/__fixtures__/import/index.js": Array [
-    "tests/out/95648dadad51baf0ce1519920df6f3c5/main.js",
+{
+  "tests/__fixtures__/import/index.js": [
+    "tests/out/74b4d3d0f5515a688112d490508c0f0d/main.js",
   ],
-  "tests/__fixtures__/import/other.js": Array [
-    "tests/out/95648dadad51baf0ce1519920df6f3c5/main.js",
+  "tests/__fixtures__/import/other.js": [
+    "tests/out/74b4d3d0f5515a688112d490508c0f0d/main.js",
   ],
 }
 `;
 
 exports[`includes 1`] = `
-Object {
-  "tests/__fixtures__/includes/index.js": Array [
-    "tests/out/68a8fb1db0974a43256fce58c0f967fc/main.js",
+{
+  "tests/__fixtures__/includes/index.js": [
+    "tests/out/1913f09eb081a8f3fded828c8294387a/main.js",
   ],
-  "tests/__fixtures__/includes/other.js": Array [
-    "tests/out/68a8fb1db0974a43256fce58c0f967fc/main.js",
+  "tests/__fixtures__/includes/other.js": [
+    "tests/out/1913f09eb081a8f3fded828c8294387a/main.js",
   ],
 }
 `;
 
 exports[`lib 1`] = `
-Object {
-  "node_modules/.pnpm/jquery@3.6.0/node_modules/jquery/dist/jquery.js": Array [
-    "tests/out/f394416710a0428ae5868ca3f32f6c63/main.js",
+{
+  "node_modules/.pnpm/jquery@3.7.1/node_modules/jquery/dist/jquery.js": [
+    "tests/out/144bfedf5c434a6a9e222b67d1fddd4f/main.js",
   ],
-  "tests/__fixtures__/lib/index.js": Array [
-    "tests/out/f394416710a0428ae5868ca3f32f6c63/main.js",
+  "tests/__fixtures__/lib/index.js": [
+    "tests/out/144bfedf5c434a6a9e222b67d1fddd4f/main.js",
   ],
 }
 `;
 
 exports[`loader 1`] = `
-Object {
-  "tests/__fixtures__/basic/index.js": Array [
-    "tests/out/7ca326c6328fd24d0cd8bc167365dfb7/main.js",
+{
+  "tests/__fixtures__/basic/index.js": [
+    "tests/out/99fd1a68ed5b12e4a771c180bc6998cc/main.js",
   ],
-  "tests/__fixtures__/loader/index.js": Array [
-    "tests/out/7ca326c6328fd24d0cd8bc167365dfb7/main.js",
+  "tests/__fixtures__/loader/index.js": [
+    "tests/out/99fd1a68ed5b12e4a771c180bc6998cc/main.js",
   ],
 }
 `;
 
 exports[`multiple entries basic 1`] = `
-Object {
-  "tests/__fixtures__/basic/index.js": Array [
-    "tests/out/585f03b2841b10d11c4323106a09e8f0/basic.js",
+{
+  "tests/__fixtures__/basic/index.js": [
+    "tests/out/e6de0cf1a998c217e85729459c80900f/basic.js",
   ],
-  "tests/__fixtures__/includes/index.js": Array [
-    "tests/out/585f03b2841b10d11c4323106a09e8f0/includes.js",
+  "tests/__fixtures__/includes/index.js": [
+    "tests/out/e6de0cf1a998c217e85729459c80900f/includes.js",
   ],
-  "tests/__fixtures__/includes/other.js": Array [
-    "tests/out/585f03b2841b10d11c4323106a09e8f0/includes.js",
+  "tests/__fixtures__/includes/other.js": [
+    "tests/out/e6de0cf1a998c217e85729459c80900f/includes.js",
   ],
 }
 `;
 
 exports[`multiple entries cross-files 1`] = `
-Object {
-  "tests/__fixtures__/basic/index.js": Array [
-    "tests/out/35be8b19245bc00184cbec2a0997433a/basic.js",
-    "tests/out/35be8b19245bc00184cbec2a0997433a/cross.js",
+{
+  "tests/__fixtures__/basic/index.js": [
+    "tests/out/fa1abf78780b2d63a098f4960aa06ee1/basic.js",
+    "tests/out/fa1abf78780b2d63a098f4960aa06ee1/cross.js",
   ],
-  "tests/__fixtures__/cross/index.js": Array [
-    "tests/out/35be8b19245bc00184cbec2a0997433a/cross.js",
+  "tests/__fixtures__/cross/index.js": [
+    "tests/out/fa1abf78780b2d63a098f4960aa06ee1/cross.js",
   ],
-  "tests/__fixtures__/includes/index.js": Array [
-    "tests/out/35be8b19245bc00184cbec2a0997433a/includes.js",
-    "tests/out/35be8b19245bc00184cbec2a0997433a/cross.js",
+  "tests/__fixtures__/includes/index.js": [
+    "tests/out/fa1abf78780b2d63a098f4960aa06ee1/includes.js",
+    "tests/out/fa1abf78780b2d63a098f4960aa06ee1/cross.js",
   ],
-  "tests/__fixtures__/includes/other.js": Array [
-    "tests/out/35be8b19245bc00184cbec2a0997433a/includes.js",
-    "tests/out/35be8b19245bc00184cbec2a0997433a/cross.js",
+  "tests/__fixtures__/includes/other.js": [
+    "tests/out/fa1abf78780b2d63a098f4960aa06ee1/includes.js",
+    "tests/out/fa1abf78780b2d63a098f4960aa06ee1/cross.js",
   ],
 }
 `;
 
 exports[`single file 1`] = `
-Object {
-  "tests/__fixtures__/basic/index.js": Array [
-    "tests/out/00d68daeb58c978d906a4f191cd670a3/main.js",
+{
+  "tests/__fixtures__/basic/index.js": [
+    "tests/out/817377307c84c12762cca0b37318c635/main.js",
   ],
 }
 `;
 
 exports[`ts 1`] = `
-Object {
-  "tests/__fixtures__/ts/index.ts": Array [
-    "tests/out/10489cdf96e8cc374a89ef5f6dc6f456/main.js",
+{
+  "tests/__fixtures__/ts/index.ts": [
+    "tests/out/b205b5d61358817da8761615bae42929/main.js",
   ],
 }
 `;
 
 exports[`ts loader 1`] = `
-Object {
-  "tests/__fixtures__/loader-ts/index.js": Array [
-    "tests/out/1470cfd0c74aa9be07f7b217c0fb4e4c/main.js",
+{
+  "tests/__fixtures__/loader-ts/index.js": [
+    "tests/out/8a2590ef8037e73cdcf5209cd3628c84/main.js",
   ],
-  "tests/__fixtures__/ts/index.ts": Array [
-    "tests/out/1470cfd0c74aa9be07f7b217c0fb4e4c/main.js",
+  "tests/__fixtures__/ts/index.ts": [
+    "tests/out/8a2590ef8037e73cdcf5209cd3628c84/main.js",
   ],
-  "tests/__fixtures__/ts/tsconfig.json": Array [
-    "tests/out/1470cfd0c74aa9be07f7b217c0fb4e4c/main.js",
+  "tests/__fixtures__/ts/tsconfig.json": [
+    "tests/out/8a2590ef8037e73cdcf5209cd3628c84/main.js",
   ],
 }
 `;

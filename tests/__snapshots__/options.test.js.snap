@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`obeys cwd 1`] = `
-Object {
-  "basic/index.js": Array [
-    "../out/ba0947c7e0390c1eecfc1feed0248ac9/main.js",
+{
+  "basic/index.js": [
+    "../out/0c059a296e7692b0b3e2c83306c9271d/main.js",
   ],
 }
 `;

@@ -26,7 +26,7 @@ module.exports = {
 }
 ```
 
-Note that webpack strips needed information in production mode, so the maps you actually want to use should be produced in development mode.
+Since version 1.1.0, this plugin also works properly in production mode.
 
 
 ## Options

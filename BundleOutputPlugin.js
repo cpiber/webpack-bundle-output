@@ -5,6 +5,7 @@ const { cwd } = require('process');
 const schema = {
     type: 'object',
     properties: {
+        cwd: { type: 'string' },
         output: { type: 'string' },
     },
     additionalProperties: false,
@@ -20,6 +21,7 @@ class BundleOutputPlugin
         });
 
         this.options = {
+            cwd: cwd(),
             output: 'map.json', // Default output file
             ...options,
         };
@@ -29,7 +31,7 @@ class BundleOutputPlugin
      */
     apply(compiler)
     {
-        const pluginName = 'BundleOutputPlugin';
+        const pluginName = BundleOutputPlugin.name;
         const { webpack } = compiler;
         const { Compilation, NormalModule } = webpack;
         const { RawSource } = webpack.sources;
@@ -45,9 +47,9 @@ class BundleOutputPlugin
             const addMapping = (sourcePath, outputFile) =>
             {
                 if (!sourcePath) return;
-                const relativeSource = relative(cwd(), sourcePath);
+                const relativeSource = relative(this.options.cwd, sourcePath);
                 filesMap[relativeSource] = filesMap[relativeSource] || new Set();
-                filesMap[relativeSource].add(relative(cwd(), join(outputPath, outputFile)));
+                filesMap[relativeSource].add(relative(this.options.cwd, join(outputPath, outputFile)));
             };
 
             /**
